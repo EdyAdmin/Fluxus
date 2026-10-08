@@ -1,5 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/core";
 import "./App.css";
 
@@ -13,26 +12,29 @@ function App() {
   }
 
   return (
-    <main className="container">
-      <h1>Welcome to Fluxus</h1>
-      <h2> App in process </h2>
+    <>
+      <main className="container">
+        <h1>Welcome to Fluxus</h1>
+        <h2> App in process </h2>
 
-      <form
-        className="row"
-        onSubmit={(e) => {
-          e.preventDefault();
-          greet();
-        }}
-      >
-        <input
-          id="greet-input"
-          onChange={(e) => setName(e.currentTarget.value)}
-          placeholder="Enter a name..."
-        />
-        <button type="submit">Greet</button>
-      </form>
-      <p>{greetMsg}</p>
-    </main>
+        <form
+          className="row"
+          onSubmit={(e) => {
+            e.preventDefault();
+            greet();
+          }}
+        >
+          <input
+            id="greet-input"
+            onChange={(e) => setName(e.currentTarget.value)}
+            placeholder="Enter a name..."
+          />
+          <button type="submit">Greet</button>
+        </form>
+        <p>{greetMsg}</p>
+      </main>
+      <footer> Contact to <a href= "https://www.linkedin.com/in/eduard-andrei-szabo-02406641b/"> Eduard Andrei Szabo </a> for more information </footer>
+    </>
   );
 }
 
