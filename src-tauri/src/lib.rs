@@ -1,9 +1,14 @@
-pub mod chat;
+// File dedicated to the implementation of the app.
 
-use std::sync::Mutex;
-use tauri::State;
+// Import of chats.
+pub mod chat;
 use chat::{Conversation, Role};
 
+// Import for mutexes and shared memory.
+use std::sync::Mutex;
+use tauri::State;
+
+// Function the default run.
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
