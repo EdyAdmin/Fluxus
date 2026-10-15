@@ -27,33 +27,41 @@ function App() {
   return (
     <>
       <main className="container">
-        <h1>Welcome to Fluxus</h1>
-        <h2> Write your messages </h2>
+        <div className="Menu">
 
-        <form
-          className="row"
-          onSubmit={(e) => {
-            e.preventDefault();
-            handle_send();
-          }}
-        >
-          <input
-            id="message_area"
-            value={inputText}
-            onChange={(e) => setImputText(e.currentTarget.value)}
-            placeholder="Enter your text"
-          />
-          <button type="submit">send</button>
-        </form>
-        <div className="chat-box">
-          {messages.map((msg, index) => (
-            <p key={index}>
-              <strong>[{msg.role}]:</strong> {msg.content}
-            </p>
-          ))}
         </div>
+
+        <div className="mainChat">
+          <div className="response-box">
+            {messages.map((msg, index) => (
+              <p key={index}>
+                 {msg.content}
+              </p>
+            ))}
+          </div>
+
+          <div className="chat-box">
+            <form
+            className="row"
+            onSubmit={(e) => {
+              e.preventDefault();
+              handle_send();
+            }}
+            >
+              <input
+                id="message_area"
+                value={inputText}
+                onChange={(e) => setImputText(e.currentTarget.value)}
+                placeholder="Enter your text"
+              />
+              <button type="submit">send</button>
+            </form>
+
+          </div>
+          
+        </div>
+
       </main>
-      <footer> Contact to <a href= "https://www.linkedin.com/in/eduard-andrei-szabo-02406641b/"> Eduard Andrei Szabo </a> for more information </footer>
     </>
   );
 }

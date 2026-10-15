@@ -15,15 +15,47 @@
   -webkit-text-size-adjust: 100%;
 }
 
+body{
+  margin: 0;
+}
+
 .container {
   margin: 0;
-  min-height: 90vh;
-  width: 100%;
-  /*padding-top: 10vh;*/
+  min-height: 99vh;
+  width: 99.9%;
+  /*padding-top: 10vh;*/ 
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  flex-direction: row;
+  border: 1px solid blue;
+  /*justify-content: center;*/
+  /*text-align: center;*/
+}
+
+.Menu{
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  grid-auto-rows: minmax(150px, auto);
+  border: 1px solid red;
+}
+
+.mainChat{
+  flex: 3;
+  display: flex;
+  align-items: stretch;
+  flex-direction:column;
+  border: 1px solid green;
+}
+
+.chat-box{
+  flex: 1;
+  border: 1px solid yellow; 
+}
+
+.response-box{
+  flex: 8;
+  border: 1px solid pink; 
 }
 
 .logo {
