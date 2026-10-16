@@ -58,12 +58,11 @@ body{
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 10px;
+  gap: 0px;
   overflow-y: auto;
   max-height: 90vh;
   border: 1px solid pink; 
 }
-
 
 .celda:nth-child(even){
   padding-left: 20px;
@@ -72,6 +71,10 @@ body{
 .celda:nth-child(odd){
   margin-left: auto;
   padding-right: 50px;
+}
+
+.timestamp{
+  font-size: 10px;
 }
 
 .logo {
