@@ -3,11 +3,13 @@ import { invoke } from "@tauri-apps/api/core";
 import "./App.css";
 
 interface Message {
+  timestamp: number;
+  id: number;
   role: "User" | "Assistant" | "Manager" | "System";
   content: string;
   model: string | null;
-  timestamp: number;
 }
+
 function App() {
   const [inputText, setImputText] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
@@ -21,12 +23,10 @@ function App() {
 
   async function handle_send() {
     if (!inputText.trim()) return;
-
     try {
       const newMsg = await invoke<Message>("send_message", {
         content: inputText,
       });
-
       setMessages((prev) => [...prev,newMsg]);
       setImputText("");
     } catch (error) {
