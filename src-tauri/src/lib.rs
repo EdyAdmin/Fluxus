@@ -2,7 +2,7 @@
 
 // Import of chats.
 pub mod chat;
-use chat::{Message, Conversation, Role};
+use chat::{Message, Conversation};
 
 // Import for mutexes and shared memory.
 use std::sync::Mutex;
@@ -13,9 +13,8 @@ use tauri::State;
 #[tauri::command]
 fn send_message(content: String, state: State<'_, Mutex<Conversation>>) -> Message {
     let mut conv: std::sync::MutexGuard<'_, Conversation> = state.lock().unwrap();
-    let message = Message::user_message(content);
+    let message: Message = Message::user_message(content);
     conv.add_message(message.clone());
-    println!("El historial de mensajes es: {:?}", conv.messages);
     message
 }
 // Function the default run.
