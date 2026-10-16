@@ -27,7 +27,7 @@ function App() {
       const newMsg = await invoke<Message>("send_message", {
         content: inputText,
       });
-      setMessages((prev) => [...prev,newMsg]);
+      setMessages((prev) => [...prev, newMsg]);
       setImputText("");
     } catch (error) {
       console.error("Error al llamar a Rust: ", error);
@@ -43,9 +43,9 @@ function App() {
 
         <div className="mainChat">
           <div className="historial-box">
-            {messages.map((msg, index) => (
+            {messages.map((msg) => (
               <div
-                key={index}
+                key={msg.id}
                 className={`celda ${msg.role === "User" ? "user-message" : "ai-message"}`}
               >
                 <p>
