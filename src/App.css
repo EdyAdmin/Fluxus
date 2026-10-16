@@ -15,15 +15,62 @@
   -webkit-text-size-adjust: 100%;
 }
 
+body{
+  margin: 0;
+}
+
 .container {
   margin: 0;
-  min-height: 90vh;
-  width: 100%;
-  /*padding-top: 10vh;*/
+  min-height: 99vh;
+  width: 99.9%;
+  /*padding-top: 10vh;*/ 
+  display: flex;
+  flex-direction: row;
+  /*border: 1px solid blue;*/
+  /*justify-content: center;*/
+  /*text-align: center;*/
+}
+
+.Menu{
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  grid-auto-rows: minmax(150px, auto);
+  border: 1px solid red;
+}
+
+.mainChat{
+  flex: 3;
+  display: flex;
+  align-items: stretch;
+  flex-direction:column;
+  border: 1px solid green;
+}
+
+.chat-box{
+  flex: 1;
+  /*border: 1px solid yellow;*/
+}
+
+.historial-box{
+  flex: 8;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  align-items: stretch;
+  gap: 10px;
+  overflow-y: auto;
+  border: 1px solid pink; 
+}
+
+
+.celda:nth-child(even){
+  padding-left: 20px;
+}
+
+.celda:nth-child(odd){
+  margin-left: auto;
+  padding-right: 50px;
 }
 
 .logo {
