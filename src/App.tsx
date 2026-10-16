@@ -6,6 +6,7 @@ interface Message {
   role: "User" | "Assistant" | "Manager" | "System";
   content: string;
   model: string | null;
+  timestamp?: string;
 }
 function App() {
   const [inputText, setImputText] = useState("");
@@ -13,11 +14,21 @@ function App() {
 
   async function handle_send() {
     if (!inputText.trim()) return;
+
+    const reloj = new Date();
+    const horaLimpia = reloj.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
     try {
       const newMsg = await invoke<Message>("send_message", {
         content: inputText,
-      })
-      setMessages((prev) => [...prev,newMsg]);
+      });
+
+      const mensajeConHora = {
+      ...newMsg, 
+      timestamp: horaLimpia
+      };
+
+      setMessages((prev) => [...prev,mensajeConHora]);
       setImputText("");
     } catch (error) {
       console.error("Error al llamar a Rust: ", error);
@@ -37,7 +48,11 @@ function App() {
               <div className='celda'>
                 <p key={index}>
                  {msg.content}
-              </p> 
+                </p>
+                
+                <span className="timestamp">
+                  {msg.timestamp}
+                </span> 
               </div>
             ))}
           </div>
