@@ -4,14 +4,14 @@ import "./App.css";
 
 interface Message {
   timestamp: number;
-  id: number;
+  id: string;
   role: "User" | "Assistant" | "Manager" | "System";
   content: string;
   model: string | null;
 }
 
 function App() {
-  const [inputText, setImputText] = useState("");
+  const [inputText, setInputText] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
 
   function formatTimestamp(timestamp: number): string {
@@ -28,7 +28,7 @@ function App() {
         content: inputText,
       });
       setMessages((prev) => [...prev, newMsg]);
-      setImputText("");
+      setInputText("");
     } catch (error) {
       console.error("Error al llamar a Rust: ", error);
     }
@@ -70,7 +70,7 @@ function App() {
               <input
                 id="message_area"
                 value={inputText}
-                onChange={(e) => setImputText(e.currentTarget.value)}
+                onChange={(e) => setInputText(e.currentTarget.value)}
                 placeholder="Enter your text"
               />
               <button type="submit">send</button>

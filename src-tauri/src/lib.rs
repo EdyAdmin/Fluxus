@@ -2,12 +2,11 @@
 
 // Import of chats.
 pub mod chat;
-use chat::{Message, Conversation};
+use chat::{Conversation, Message};
 
 // Import for mutexes and shared memory.
 use std::sync::Mutex;
 use tauri::State;
-
 
 // Function for sending a message.
 #[tauri::command]
