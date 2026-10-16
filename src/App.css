@@ -65,11 +65,13 @@ body{
 }
 
 
-.celda:nth-child(even){
+.celda.other-message {
+  align-self: flex-start;
   padding-left: 20px;
 }
 
-.celda:nth-child(odd){
+.celda.user-message {
+  align-self: flex-end;
   margin-left: auto;
   padding-right: 50px;
 }

@@ -45,8 +45,11 @@ function App() {
         <div className="mainChat">
           <div className="historial-box">
             {messages.map((msg, index) => (
-              <div className='celda'>
-                <p key={index}>
+              <div
+                key={index}
+                className={`celda ${msg.role === "User" ? "user-message" : "other-message"}`}
+              >
+                <p>
                  {msg.content}
                 </p>
                 
