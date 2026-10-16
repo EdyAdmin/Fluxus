@@ -64,13 +64,8 @@ body{
   border: 1px solid pink; 
 }
 
-<<<<<<< HEAD
-
 .celda.other-message {
   align-self: flex-start;
-=======
-.celda:nth-child(even){
->>>>>>> 144a9f302081ce72351dee66ea032f5253134999
   padding-left: 20px;
 }
 
