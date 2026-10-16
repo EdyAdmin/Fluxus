@@ -47,7 +47,7 @@ function App() {
             {messages.map((msg, index) => (
               <div
                 key={index}
-                className={`celda ${msg.role === "User" ? "user-message" : "other-message"}`}
+                className={`celda ${msg.role === "User" ? "user-message" : "ai-message"}`}
               >
                 <p>
                  {msg.content}
