@@ -26,7 +26,7 @@ body{
   /*padding-top: 10vh;*/ 
   display: flex;
   flex-direction: row;
-  border: 1px solid blue;
+  /*border: 1px solid blue;*/
   /*justify-content: center;*/
   /*text-align: center;*/
 }
@@ -50,12 +50,27 @@ body{
 
 .chat-box{
   flex: 1;
-  border: 1px solid yellow; 
+  /*border: 1px solid yellow;*/
 }
 
-.response-box{
+.historial-box{
   flex: 8;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  overflow-y: auto;
   border: 1px solid pink; 
+}
+
+
+.celda:nth-child(even){
+  padding-left: 20px;
+}
+
+.celda:nth-child(odd){
+  margin-left: auto;
+  padding-right: 50px;
 }
 
 .logo {

@@ -32,11 +32,13 @@ function App() {
         </div>
 
         <div className="mainChat">
-          <div className="response-box">
+          <div className="historial-box">
             {messages.map((msg, index) => (
-              <p key={index}>
+              <div className='celda'>
+                <p key={index}>
                  {msg.content}
-              </p>
+              </p> 
+              </div>
             ))}
           </div>
 
