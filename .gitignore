@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 
+# Development
 AGENTS.md
 
 # Editor directories and files
